@@ -99,30 +99,6 @@ const addCards = async (pokemon) => {
   }
 }
 
-const pagination = document.querySelector('.pagination');
-let prevBtn, nextBtn;
-let currentPage = 1;
-let offset = 0;
-
-if (pagination) {
-  prevBtn = pagination.querySelector('.previous');
-  nextBtn = pagination.querySelector('.next');
-
-  prevBtn.addEventListener('click', () => {
-    if (offset > 0) {
-      offset -= 30;
-      currentPage--;
-      loadCards();
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    offset += 30;
-    currentPage++;
-    loadCards();
-  });
-}
-
 // *** FILTER BUTTONS
 
 const filters = document.querySelector('.filters-container');
@@ -186,7 +162,7 @@ const calculateTotalStats = pokemonDataArray => {
   defElement.textContent = totalDef;
 }
 
-// *** Nav Menu
+// *** NAV MENU
 
   const navButton = document.querySelector('button[aria-expanded]');
 
